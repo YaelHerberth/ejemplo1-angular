@@ -1,0 +1,58 @@
+<br>
+<br>
+<div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Cin%C3%A9polis.svg/2560px-Cin%C3%A9polis.svg.png" alt="" width="100rem">
+</div>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-3">
+    <div class="col card mr-3">
+        <h1 class="text-center">Entradas</h1>
+        <div class="mb-3 row">
+            <label for="" class="col-sm-2 col-form-label">Nombre</label>
+            <div class="col-sm-10">
+              <input type="text"z1 class="form-control" id="" value="" [(ngModel)]="nombre">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="" class="col-sm-2 col-form-label">Cantidad de Compradores</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputPassword" [(ngModel)]="compradores">
+            </div>
+          <div class="mb-3 row">
+            <label for="" class="col-sm-2 col-form-label">Tarjeta de Cinepolis</label>
+            <div class="col-sm-10">
+                <label for="" class="mr-3">Si</label>
+              <input type="radio" class="form-check-input mt-0" id="Si" name="Si" [(ngModel)]="tarjeta" [value]="true">
+              <label for="" class="mr-3">No</label>
+              <input type="radio" class="form-check-input mt-0" id="No" name="No" [(ngModel)]="tarjeta" [value]="false">
+            </div>
+          </div>
+          <!--<a>{{cineco}}</a>-->
+          <div class="mb-3 row">
+            <label for="" class="col-sm-2 col-form-label">Cantidad de Boletos</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="floatingInput" [(ngModel)]="ticketsNum">
+            </div>
+          </div>
+    </div>
+    </div>
+    <div class="col card mr-3">
+        <h1 class="text-center">Salidas</h1>
+        <div class="mb-3 row">
+            <label for="" class="col-sm-2 col-form-label">Valor a Pagar</label>
+            <div class="col-sm-10">
+            <input type="text" readonly class="form-control" id="floatingInput" [(ngModel)]="total" disabled="true">
+            </div>
+            <button class="btn btn-primary" (click)="calculo()">Comprar</button>
+        </div>
+    </div>
+    <div *ngIf="compraext">
+      <div class="card-body justify-content-center align-items-center text-center"></div>
+      <h1 class="ticket">Comprado a nombre de: {{nombre}}</h1>
+
+
+  </div>
+  <div *ngIf="error">
+      <div class="card-form justify-content-center align-items-center text-center">
+          <h1>No puedes comprar más de 7 boletos por persona </h1>
+      </div>
+</div>
